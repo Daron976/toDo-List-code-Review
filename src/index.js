@@ -13,7 +13,7 @@ document.getElementById('item').addEventListener('keydown', (e) => {
   }
 });
 
-reset.addEventListener('click', () => (newList.removeAll()))
+reset.addEventListener('click', () => (newList.removeAll()));
 
 window.addEventListener('load', () => {
   newList.display();
