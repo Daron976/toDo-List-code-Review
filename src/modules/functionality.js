@@ -4,6 +4,7 @@ import {
   createListItem,
   displayList,
   removeListItem,
+  resetList,
   updateListItem,
 } from './CRUD';
 import { getLocalStorageItem, setLocalStorageItem } from '../storage';
@@ -32,4 +33,6 @@ export default class List {
   completed = checkbox;
 
   removeCompleted = completedBtn;
+
+  removeAll = resetList;
 }

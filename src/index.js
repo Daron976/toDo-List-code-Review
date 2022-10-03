@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import _ from 'lodash';
 import './styles.css';
+import { reset } from './modules/data';
 import List from './modules/functionality';
 
 const newList = new List();
@@ -11,6 +12,8 @@ document.getElementById('item').addEventListener('keydown', (e) => {
     newList.add();
   }
 });
+
+reset.addEventListener('click', () => (newList.removeAll()))
 
 window.addEventListener('load', () => {
   newList.display();

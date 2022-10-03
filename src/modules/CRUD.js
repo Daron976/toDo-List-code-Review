@@ -3,6 +3,7 @@ import {
   trash,
   dots,
   checkboxInput,
+  reset,
 } from './data';
 
 export function displayList() {
@@ -25,7 +26,7 @@ export function displayList() {
     document.getElementsByClassName('edit-list')[i].addEventListener('keydown', (e) => this.edit(e));
     checkboxInput[i].addEventListener('click', (e) => this.completed(e));
   }
-
+  
   for (let i = 0; i < dots.length; i += 1) {
     if (this.itemInformation[i].completed === true) {
       checkboxInput[i].toggleAttribute('checked');
@@ -68,6 +69,13 @@ export function removeListItem(e) {
   for (let i = 0; i < this.itemInformation.length; i += 1) {
     this.itemInformation[i].id = i;
   }
+  this.addToLocalStorage();
+  document.getElementById('ulist').innerHTML = '';
+  this.display();
+}
+
+export function resetList() {
+  this.itemInformation = [];
   this.addToLocalStorage();
   document.getElementById('ulist').innerHTML = '';
   this.display();
